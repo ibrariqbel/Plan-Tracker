@@ -229,4 +229,3 @@ C:\Users\Ibrar Iqbal\Desktop\Plan Tracker\PlanTracker\bin\Debug\net9.0\runtimes\
 C:\Users\Ibrar Iqbal\Desktop\Plan Tracker\PlanTracker\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Ibrar Iqbal\Desktop\Plan Tracker\PlanTracker\obj\Debug\net9.0\PlanTracker.csproj.AssemblyReference.cache
 C:\Users\Ibrar Iqbal\Desktop\Plan Tracker\PlanTracker\obj\Debug\net9.0\PlanTrac.FB61237A.Up2Date
-C:\Users\Ibrar Iqbal\Desktop\Plan Tracker\PlanTracker\obj\Debug\net9.0\PlanTracker.sourcelink.json

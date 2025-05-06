@@ -12,20 +12,17 @@ using PlanTracker.Interfaces;
 
 namespace PlanTracker.Controllers
 {
-  
     public class AdminController : Controller
     {
         private readonly SqlDbContext dbContext;    // encapsulated feilds
         private readonly ITokenService tokenService;
        
-
         public AdminController(ITokenService tokenService, SqlDbContext dbContext)
         {
             this.tokenService = tokenService;
             this.dbContext = dbContext;
            
         }
-      
 
         [HttpGet]
         public IActionResult Dashboard()

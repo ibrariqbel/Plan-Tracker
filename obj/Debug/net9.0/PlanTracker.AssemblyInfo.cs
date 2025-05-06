@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlanTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebd8cde8db2b43fc59738c3e3130f5342389782e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19eec7ced38729f29904a5e02a455432bfc0ad02")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlanTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlanTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
