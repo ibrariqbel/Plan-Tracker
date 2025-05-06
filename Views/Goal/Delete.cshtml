@@ -1,0 +1,80 @@
+@model PlanTracker.Models.DomainModels.Goal
+
+@{
+    ViewData["Title"] = "Delete Goal";
+}
+
+<!-- Background Wrapper -->
+<div class="container-fluid bg-neumorphism p-4">
+    <div class="neumorphic-card p-4 text-center">
+        <h1 class="text-danger">Are You Sure?</h1>
+        <p class="text-muted">This action will permanently remove the goal.</p>
+
+        <div class="neumorphic-card p-3 mt-3">
+            <dl class="row">
+                <dt class="col-sm-4">Goal ID:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt class="col-sm-4">Title:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Title)</dd>
+
+                <dt class="col-sm-4">Description:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+
+                <dt class="col-sm-4">Start Date:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.StartDate)</dd>
+
+                <dt class="col-sm-4">End Date:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.EndDate)</dd>
+            </dl>
+        </div>
+
+        <form asp-action="Delete">
+            <button type="submit" class="btn-danger-neumorphic">Delete Goal</button>
+            <a asp-action="Index" class="btn-neumorphic ms-3">Back to List</a>
+        </form>
+    </div>
+</div>
+
+<!-- Neumorphism CSS -->
+<style>
+    .bg-neumorphism {
+        background: #e0e0e0;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .neumorphic-card {
+        background: #e0e0e0;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 8px 8px 15px #c8c8c8, -8px -8px 15px #ffffff;
+    }
+
+    .btn-neumorphic {
+        background: #e0e0e0;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 10px #c8c8c8, -4px -4px 10px #ffffff;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-neumorphic:hover {
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+
+    .btn-danger-neumorphic {
+        background: #e74c3c;
+        color: white;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 10px #c8c8c8, -4px -4px 10px #ffffff;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-danger-neumorphic:hover {
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+</style>

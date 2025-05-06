@@ -1,0 +1,93 @@
+@model PlanTracker.Models.DomainModels.Goal
+
+@{
+    ViewData["Title"] = "Edit Goal";
+}
+
+<!-- Background Wrapper -->
+<div class="container-fluid bg-neumorphism p-4">
+    <div class="text-center mb-4">
+        <h1>Edit Your Goal</h1>
+        <p class="text-muted">Modify goal details and save changes.</p>
+    </div>
+
+    <div class="neumorphic-card p-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Title</label>
+                <input asp-for="Title" class="form-control input-neumorphic" required />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control input-neumorphic" rows="3" required></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="StartDate" class="form-label">Start Date</label>
+                <input asp-for="StartDate" type="date" class="form-control input-neumorphic" required />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="EndDate" class="form-label">End Date</label>
+                <input asp-for="EndDate" type="date" class="form-control input-neumorphic" required />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn-neumorphic w-100">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-link">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<!-- Neumorphism CSS -->
+<style>
+    .bg-neumorphism {
+        background: #e0e0e0;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .neumorphic-card {
+        background: #e0e0e0;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 8px 8px 15px #c8c8c8, -8px -8px 15px #ffffff;
+    }
+
+    .input-neumorphic {
+        background: #e0e0e0;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+
+    .btn-neumorphic {
+        background: #e0e0e0;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 10px #c8c8c8, -4px -4px 10px #ffffff;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-neumorphic:hover {
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+</style>

@@ -1,0 +1,100 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<!-- Background Wrapper -->
+<div class="container-fluid bg-neumorphism p-4">
+    <div class="text-center mb-4">
+        <h1>Welcome to Admin Dashboard</h1>
+        <p class="text-muted">Visualizing progress with interactive charts.</p>
+    </div>
+
+    <div class="text-center mt-4">
+        <a class="btn-neumorphic" asp-controller="Goal" asp-action="Index">Create New Goal</a>
+    </div>
+<hr>
+
+    <!-- Statistics Overview -->
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="neumorphic-card text-center">
+                <h4>Total Goals</h4>
+                <p class="display-6">145</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="neumorphic-card text-center">
+                <h4>Completed Tasks</h4>
+                <p class="display-6">3,245</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="neumorphic-card text-center">
+                <h4>Active Users</h4>
+                <p class="display-6">521</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Graphs Section -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="neumorphic-card p-4">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="neumorphic-card p-4">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Bar Chart: Goals Completed vs Pending
+    var ctx = document.getElementById("barChart").getContext("2d");
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Completed", "Pending"],
+            datasets: [{
+                label: "Goals Status",
+                data: [85, 60], // Replace with dynamic data
+                backgroundColor: ["#2ecc71", "#e74c3c"]
+            }]
+        }
+    });
+
+    // Pie Chart: Task Distribution
+    var ctxPie = document.getElementById("pieChart").getContext("2d");
+    new Chart(ctxPie, {
+        type: "pie",
+        data: {
+            labels: ["High Priority", "Medium Priority", "Low Priority"],
+            datasets: [{
+                label: "Task Priority",
+                data: [30, 45, 25], // Replace with dynamic data
+                backgroundColor: ["#e74c3c", "#f1c40f", "#3498db"]
+            }]
+        }
+    });
+</script>
+
+<!-- Neumorphism CSS -->
+<style>
+    .bg-neumorphism {
+        background: #e0e0e0;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .neumorphic-card {
+        background: #e0e0e0;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 8px 8px 15px #c8c8c8, -8px -8px 15px #ffffff;
+    }
+</style>

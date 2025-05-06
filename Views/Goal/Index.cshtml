@@ -1,0 +1,108 @@
+@model IEnumerable<PlanTracker.Models.DomainModels.Goal>
+
+@{
+    ViewData["Title"] = "Goals";
+}
+
+<!-- Background Wrapper -->
+<div class="container-fluid bg-neumorphism p-4">
+    <div class="text-center mb-4">
+        <h1>Manage Your Goals</h1>
+        <p class="text-muted">Track and update your goals easily.</p>
+    </div>
+
+    <div class="text-end mb-3">
+        <a class="btn-neumorphic" asp-action="Create">Create New Goal</a>
+    </div>
+
+    <div class="neumorphic-card p-4">
+        <table class="table table-neumorphic">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EndDate)</td>
+                    <td>
+                        <a class="btn-neumorphic-small" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a class="btn-neumorphic-small" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a class="btn-neumorphic-small text-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Neumorphism CSS -->
+<style>
+    /* Background */
+    .bg-neumorphism {
+        background: #e0e0e0;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    /* Neumorphic Card */
+    .neumorphic-card {
+        background: #e0e0e0;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 8px 8px 15px #c8c8c8, -8px -8px 15px #ffffff;
+    }
+
+    /* Neumorphic Table */
+    .table-neumorphic {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-neumorphic th, .table-neumorphic td {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .table-neumorphic tr:hover {
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+
+    /* Buttons */
+    .btn-neumorphic {
+        background: #e0e0e0;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 10px #c8c8c8, -4px -4px 10px #ffffff;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-neumorphic:hover {
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+
+    .btn-neumorphic-small {
+        background: #e0e0e0;
+        padding: 5px 10px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 8px #c8c8c8, -3px -3px 8px #ffffff;
+        font-size: 14px;
+    }
+
+    .btn-neumorphic-small:hover {
+        box-shadow: inset 3px 3px 8px #c8c8c8, inset -3px -3px 8px #ffffff;
+    }
+</style>

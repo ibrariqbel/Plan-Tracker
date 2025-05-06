@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Background Wrapper -->
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100 bg-neumorphism">
+    <div class="neumorphic-card p-4">
+        <h2 class="text-center mb-4">Create Your Account</h2>
+
+        <form method="post" asp-controller="User" asp-action="Register">
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="text" class="form-control input-neumorphic" name="Username" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email address</label>
+                <input type="email" class="form-control input-neumorphic" name="Email" required>
+                <div class="form-text">We'll never share your email.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Password" class="form-label">Password</label>
+                <input type="password" class="form-control input-neumorphic" name="Password" required>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" required>
+                <label class="form-check-label">Agree to terms</label>
+            </div>
+
+            <button type="submit" class="btn-neumorphic w-100">Register</button>
+
+            <p class="text-danger text-center pt-2"> @ViewBag.errorMessage </p>
+            <p class="text-success text-center pt-2"> @ViewBag.successMessage </p>
+        </form>
+    </div>
+</div>
+
+<!-- Neumorphism CSS -->
+<style>
+    /* Background */
+    .bg-neumorphism {
+        background: #e0e0e0;
+        height: 100vh;
+    }
+
+    /* Card Design */
+    .neumorphic-card {
+        width: 400px;
+        padding: 20px;
+        border-radius: 15px;
+        background: #e0e0e0;
+        box-shadow: 8px 8px 15px #c8c8c8, -8px -8px 15px #ffffff;
+    }
+
+    /* Input Fields */
+    .input-neumorphic {
+        background: #e0e0e0;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+
+    /* Buttons */
+    .btn-neumorphic {
+        background: #e0e0e0;
+        border: none;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 4px 4px 10px #c8c8c8, -4px -4px 10px #ffffff;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-neumorphic:hover {
+        box-shadow: inset 4px 4px 10px #c8c8c8, inset -4px -4px 10px #ffffff;
+    }
+</style>
